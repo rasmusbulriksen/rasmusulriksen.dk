@@ -1,0 +1,43 @@
+---
+const name = 'Rasmus B. Ulriksen';
+const email = 'rbu@rasmusulriksen.dk';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{name}</title>
+    <meta name="description" content={name} />
+  </head>
+  <body>
+    <main>
+      <img src="/photo.png" alt={name} width="200" height="200" />
+      <h1>{name}</h1>
+      <a href={`mailto:${email}`}>{email}</a>
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  :root { color-scheme: dark; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    font-family: system-ui, sans-serif;
+    background: #000;
+    color: #fff;
+  }
+  main {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    text-align: center;
+  }
+  img { width: min(200px, 80vw); height: auto; }
+  h1 { margin: 0; font-size: 2rem; font-weight: 600; }
+  a { color: inherit; font-size: 1.1rem; text-underline-offset: 4px; }
+</style>
