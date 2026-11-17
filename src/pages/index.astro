@@ -21,14 +21,21 @@ const email = 'rbu@rasmusulriksen.dk';
 
 <style is:global>
   :root { color-scheme: dark; }
-  html, body { height: 100%; margin: 0; }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
   body {
     font-family: system-ui, sans-serif;
     background: #000;
     color: #fff;
   }
   main {
-    min-height: 100dvh;
+    height: 100dvh;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,6 +45,9 @@ const email = 'rbu@rasmusulriksen.dk';
     text-align: center;
   }
   img { width: min(200px, 80vw); height: auto; }
+  @media (max-width: 600px) {
+    img { width: 40vw; }
+  }
   h1 { margin: 0; font-size: 2rem; font-weight: 600; }
   a { color: inherit; font-size: 1.1rem; text-underline-offset: 4px; }
 </style>
